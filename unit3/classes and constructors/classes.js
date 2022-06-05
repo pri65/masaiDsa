@@ -50,7 +50,7 @@ var rect1=new Rectangle(5,4)
 console.log(rect1.area()) //20
 console.log(rect1.totalPrice(1000)) //20000
 
-//4.eg (creating arr using classes)
+//4.eg (creating arr using classes)(empty array)
 class OurArray{
     constructor(){
         this.arr=[];
@@ -67,3 +67,23 @@ class OurArray{
 var arr=new OurArray();
 console.log(arr.isEmpty()) // true;
 
+//5.eg (arr not empty)
+class OurArray{
+    constructor(){
+        this.arr=[];
+        this.length=0;
+    }
+    isEmpty(){
+        if(this.arr.length===0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    push(ele){
+        this.arr[this.length]=ele;
+        this.length+=1;
+    }
+}
+var arr=new OurArray();
+console.log(arr.isEmpty()) 
