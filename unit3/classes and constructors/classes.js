@@ -86,4 +86,7 @@ class OurArray{
     }
 }
 var arr=new OurArray();
-console.log(arr.isEmpty()) 
+arr.push(12)
+console.log(arr) //OurArray{arr:[12],length:1} 
+arr.push(25)
+console.log(arr) // OurArray{arr:[12,25],length:2} 
