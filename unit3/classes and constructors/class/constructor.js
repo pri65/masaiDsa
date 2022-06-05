@@ -27,7 +27,8 @@ class stack {
             console.log(this.arr[this.top])
         }
     }
-    isEmpty(){
+    isEmpty() 
+    {
         if(this.size==0) {
             return true;
         } else {
