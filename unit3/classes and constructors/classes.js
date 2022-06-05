@@ -49,3 +49,21 @@ class Rectangle{
 var rect1=new Rectangle(5,4)
 console.log(rect1.area()) //20
 console.log(rect1.totalPrice(1000)) //20000
+
+//4.eg (creating arr using classes)
+class OurArray{
+    constructor(){
+        this.arr=[];
+        this.length=0;
+    }
+    isEmpty(){
+        if(this.arr.length===0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+var arr=new OurArray();
+console.log(arr.isEmpty()) // true;
+
