@@ -12,8 +12,8 @@ class Person{
         this.city=city
     }
 }
-
 var per1=new Person("Aman","Pune")
 var per2=new Person("Anu","Pune")
 var per3=new Person("Akash","Mumbai")
 var per4=new Person("Atul","Goa")
+console.log(per1,per2,per3);
