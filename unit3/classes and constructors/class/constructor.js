@@ -19,9 +19,25 @@ class stack {
             this.top--;
             this.size--;
         }
+        Peek() {
+            if(this.size==0)
+        {
+            console.log("Stack is empty");
+        } else {
+            console.log(this.arr[this.top])
+        }
+    }
+    isEmpty(){
+        if(this.size==0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 
 var st1=new stack()
-st1.push(100)
-st1.push(50)
+st1.pop() //stack is empty
+st1.push(100) //1 100
+st1.push(50) //2 50
+st1.push(20) //3 20
