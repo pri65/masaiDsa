@@ -1,9 +1,19 @@
-var obj={
-    name:"albert",
-    city:"pune",
-    printCity: function() {
-        return this.city
-    }
-};
+//classes- these are the template for creating objects.
 
-console.log(obj.printCity());
+//syntax for classes is:->
+// class className{
+//     //constructor
+//     //method
+// }
+
+class Person{
+    constructor(name,city){
+        this.name=name
+        this.city=city
+    }
+}
+
+var per1=new Person("Aman","Pune")
+var per2=new Person("Anu","Pune")
+var per3=new Person("Akash","Mumbai")
+var per4=new Person("Atul","Goa")
