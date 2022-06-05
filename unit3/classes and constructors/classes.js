@@ -32,3 +32,20 @@ class Person{
 var per1=new Person("Aman","Pune")
 var per2=new Person("Anu","Pune")
 console.log(per1,per2);
+
+//3.eg (with 2 methods)
+class Rectangle{
+    constructor(l,b){
+        this.length=l;
+        this.breadth=b;
+    }
+    area(){
+        return this.length * this.breadth
+    }
+    totalPrice(price){
+        return(this.length*this.breadth)*price;
+    }
+}
+var rect1=new Rectangle(5,4)
+console.log(rect1.area()) //20
+console.log(rect1.totalPrice(1000)) //20000
