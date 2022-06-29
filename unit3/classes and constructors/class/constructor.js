@@ -1,4 +1,4 @@
-class stack {
+class Stack {
     constructor() {
         this.arr=[];
         this.size=0;
@@ -19,7 +19,8 @@ class stack {
             this.top--;
             this.size--;
         }
-        Peek() {
+        Peek()
+         {
             if(this.size==0)
         {
             console.log("Stack is empty");
@@ -37,7 +38,7 @@ class stack {
     }
 }
 
-var st1=new stack()
+var st1=new Stack(10)
 st1.pop() //stack is empty
 st1.push(100) //1 100
 st1.push(50) //2 50
