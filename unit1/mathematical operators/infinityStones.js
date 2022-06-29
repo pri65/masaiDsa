@@ -1,15 +1,35 @@
-// You are given a number, stored in a variable with the namenumber. Perform the following operations on the value stored in the number
+// Description
 
-// 1. Multiply the value by 3
-// 2. Add 7 after it
-// 3. Subtract 10 from it
-// After performing all the above operations, print the updated value
+// You are given five numbers, stored in variables with the following names
+
+//  one, two, three, four, five, six
+// The value stored in the variabletwo, five, sixhas been doubled, such that if initially the value was 3, it has become 6
+
+// The value stored in the variablethree, fourhas been increased three times, such that if initially it was 3, it has become 9
+
+// The value stored in the variableonehas not been changed.
+
+// Find the sum of the updated values stored inone, two, three, four, five, six
 
 
 // Input
-// // The first and the only line of the input contains the number, stored in the variablenumber
+// The first and the only line of input contains the values stored in the variableone, two, three, four, five, six
 
 
-function operationOnNumbers(number){
-    console.log(((number*3)+7)-10);
-}
+// Output
+// Find the sum of the updated values stored inone, two, three, four, five, six
+
+
+// Sample Input 1 
+
+// 1 2 3 4 5 6
+// Sample Output 1
+
+// 48
+
+
+function infinityStones(one, two, three, four, five, six) {
+    console.log(one+(two*2)+(three*3)+(four*3)+(five*2)+(six*2));
+        
+    }
+    
