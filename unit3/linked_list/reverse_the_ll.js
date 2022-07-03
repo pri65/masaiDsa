@@ -39,3 +39,32 @@
 // Sample Output 1
 
 // 5 4 3 2 1 
+
+
+// nodeData=x
+const LinkedListNode = class {
+    constructor(nodeData) {
+        this.data = nodeData;
+        this.next = null;
+    }
+}
+
+// Complete the function below
+
+ function reverse(head) {
+    var cur = head;
+       var  prev = null;
+        var future = null;
+        while (cur != null) {
+            future = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur= future;
+        }
+        head = prev;
+        return head
+    }
+
+
+
+
