@@ -40,3 +40,28 @@
 // Sample Output 1
 
 // 20 6 2 7 4 15 9
+
+
+
+const LinkedListNode = class {
+    constructor(nodeData) {
+        this.data = nodeData;
+        this.next = null;
+    }
+};
+
+// Complete the function below
+
+function deleteNode(head, position) {
+   var cur=head;
+   var prev=null;
+   var count=0;
+   while(count!=position) {
+       prev=cur
+       cur=cur.next;
+       count++;
+   }
+   prev.next=cur.next
+   return head;
+}
+
