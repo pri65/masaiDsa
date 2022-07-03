@@ -33,3 +33,73 @@
 
 
 
+function runProgram(input){
+    input=input.trim().split('\n')
+    var tc=+input[0]
+    var line=1;
+    for(var i=0; i<tc; i++)
+    {
+        var n=+input[line]
+        line++
+        check(n)
+    }
+     
+ }
+ 
+ 
+ function check(n) {
+     
+     let div=[]
+     for(i=1; i<=n; i++)
+     {
+         if(n%i===0)
+         {
+             div.push(i);
+         }
+     }
+     var odd=0;
+     var even=0;
+     for(var j=0; j<div.length; j++)
+     {
+         if(div[j]%2==0)
+         {
+             even++;
+         } else {
+             odd++;
+         }
+     }
+     
+     if(odd>even)
+     {
+       console.log("Odd Skewed")  
+     } else if(odd<even)
+     {
+         console.log("Even Skewed")
+     } else if(odd==even)
+     {
+         console.log("Not Skewed")
+     }
+ }
+ 
+  
+ 
+ if (process.env.USER === "") {
+   runProgram(``);
+ } else {
+   process.stdin.resume();
+   process.stdin.setEncoding("ascii");
+   let read = "";
+   process.stdin.on("data", function (input) {
+     read += input;
+   });
+   process.stdin.on("end", function () {
+     read = read.replace(/\n$/, "");
+     read = read.replace(/\n$/, "");
+     runProgram(read);
+   });
+   process.on("SIGINT", function () {
+     read = read.replace(/\n$/, "");
+     runProgram(read);
+     process.exit(0);
+   });
+ }
