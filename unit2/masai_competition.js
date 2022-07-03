@@ -43,3 +43,65 @@
 // In the first sample test case, the winner of day 1, is with person with power 4, while the winner on second day is person with power 8, while the winner on day 3 is person with power 12.
 
 // In the second sample test case, on day 1 two people have power 7, so any of them can be the winner. Therefore, the output will be 7 for day 1, for day 2 it will be 10, and for day 3 it will be 3.
+
+
+
+function runProgram(input){
+    input=input.trim().split('\n')
+    var tc=+input[0]
+    var line=1
+    for(var i=0; i<tc; i++)
+    {
+        var mat=[]
+        var [n,m]=input[line].trim().split(" ").map(Number)
+        line++
+        for(var j=0; j<n; j++)
+        {
+            mat.push(input[line].trim().split(" ").map(Number))
+            line++
+        }
+        check(n,m,mat)
+    }
+}
+
+function check(n,m,mat) {
+   var i=0;
+var max=0;
+var result=[]
+while(i<n){
+   for(var j=0; j<mat[i].length; j++)
+   {
+       if(mat[i][j]>max)
+       {
+           max=mat[i][j];
+       }
+   }
+   result.push(max);
+   max=0;
+   i++;
+}
+console.log(result.join(" "));
+}
+
+
+
+if (process.env.USER === "") {
+ runProgram(``);
+} else {
+ process.stdin.resume();
+ process.stdin.setEncoding("ascii");
+ let read = "";
+ process.stdin.on("data", function (input) {
+   read += input;
+ });
+ process.stdin.on("end", function () {
+   read = read.replace(/\n$/, "");
+   read = read.replace(/\n$/, "");
+   runProgram(read);
+ });
+ process.on("SIGINT", function () {
+   read = read.replace(/\n$/, "");
+   runProgram(read);
+   process.exit(0);
+ });
+}
