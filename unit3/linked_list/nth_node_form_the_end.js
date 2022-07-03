@@ -35,3 +35,27 @@
 // Sample Output 1
 
 // 3
+
+
+
+const LinkedListNode = class {
+    constructor(nodeData) {
+        this.data = nodeData;
+        this.next = null;
+    }
+};
+
+function nth_node(head,n){
+    var fir=head
+    var sec=head
+    var count=0
+    while(count!=n) {
+        fir=fir.next
+        count++
+    }
+    while(fir!=null) {
+        fir=fir.next
+        sec=sec.next
+    }
+    return sec.data;
+}
