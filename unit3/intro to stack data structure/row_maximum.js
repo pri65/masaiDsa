@@ -32,3 +32,60 @@
 // Sample Output 1
 
 // 3 6 9
+
+
+function runProgram(input){
+    input=input.trim().split('\n')
+    var [n,m]=input[0].trim().split(" ").map(Number)
+    var line=1
+    var mat=[]
+    for(var i=0; i<n; i++)
+    {
+        mat.push(input[line].trim().split(" ").map(Number))
+        line++
+    }
+    check(n,m,mat)
+}
+
+function check(n,m,mat){
+
+var i=0;
+var max=0;
+var result=[]
+while(i<n){
+    for(var j=0; j<mat[i].length; j++)
+    {
+        if(mat[i][j]>max)
+        {
+            max=mat[i][j];
+        }
+    }
+    result.push(max);
+    max=0;
+    i++;
+}
+console.log(result.join(" "));
+}
+
+ 
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
