@@ -55,3 +55,60 @@
 // In the second testcase the original cost of the items is 15 + 8 + 22 + 6 = 51. Buying the coupon costs 40, and after buying it the cost of buying all the items is 5 + 0 + 12 + 0 = 17. The total cost of buying everything with the coupon is 40 + 17 = 57, which is more than 51. So, you will not buy the coupon.
 
 // In the third testcase the original cost of the items is 15 + 8 + 22 + 6 = 51. Buying the coupon costs 34, and the cost of buying all the items after using it is 17, making the total cost 34 + 17 = 51. Since this is not strictly less than the original cost, you won't buy the coupon.
+
+
+
+
+
+function runProgram(input){
+    input=input.trim().split('\n')
+    var tc=+input[0]
+    var line=1
+    for(var i=0; i<tc; i++)
+    {
+        var [n,x,y]=input[line].trim().split(" ").map(Number)
+        line++; //2
+        var p=input[line].trim().split(" ").map(Number)
+        line++
+        check(n,x,y,p)
+    }
+    
+}
+
+function check(n,x,y,p) {
+    var orcost=0
+    var discost=0
+    for(var i=0; i<n; i++)
+    {
+        orcost+=p[i];
+        discost+=(p[i]-y);
+    }
+    var netcost=discost+x;
+    if(netcost>orcost || netcost==orcost){
+        console.log("NO")
+    } else{
+        console.log("YES");
+    }
+}
+ 
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
