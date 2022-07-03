@@ -47,3 +47,22 @@
 
 // 0 2 1 0 1 
 // 0 1 
+
+
+function newYorkBuildings(N,arr){
+    var result=[]
+    for(var i=0; i<N; i++)
+    {
+        var temp=0
+        if(arr[i]>arr[i+1])
+        {
+            temp+=1
+        } if (arr[i]>arr[i-1])
+        {
+            temp+=1
+        }
+        result.push(temp)
+    }
+    console.log(result.join(" "))
+    }
+    
