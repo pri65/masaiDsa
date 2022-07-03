@@ -36,3 +36,55 @@
 // angerouscovi
 
 // angerouscovid
+
+
+
+function runProgram(input){
+    var counter=0;
+    for(var i=0; i<input.length; i++)
+    {
+        var bag=""
+        for(var j=i; j<input.length; j++)
+        {
+            bag=bag+input[j]
+            if(check(bag))
+            {
+                counter++;
+            }
+        }
+    }
+    console.log(counter)
+}
+
+function check(str) {
+    if(str.includes("a") && str.includes("i") && str.includes("o") && str.includes("u")) 
+    {
+        return true;
+    } 
+    return false;
+}
+
+
+
+ 
+
+if (process.env.USER === "") {
+  runProgram(``);
+} else {
+  process.stdin.resume();
+  process.stdin.setEncoding("ascii");
+  let read = "";
+  process.stdin.on("data", function (input) {
+    read += input;
+  });
+  process.stdin.on("end", function () {
+    read = read.replace(/\n$/, "");
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+  });
+  process.on("SIGINT", function () {
+    read = read.replace(/\n$/, "");
+    runProgram(read);
+    process.exit(0);
+  });
+}
